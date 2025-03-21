@@ -19,7 +19,7 @@ export function RecentList({list,func}){
             <h1>RecentList</h1>
 
             <div className="task">
-                { !list ? <div className="empty">
+                {list.length == 0 ? <div className="empty">
                             <p>empty</p>
                         </div> 
                    : list.map((list,index)=>(
@@ -34,7 +34,7 @@ export function RecentList({list,func}){
                         
                         <ul>
                             <li>{list.list}</li>
-                            <input type="checkbox" name="checkbox" id="" onClick={()=>func(list)} />
+                            <input type="checkbox" name="checkbox" className="check" onClick={()=>func(list)} />
                         </ul>
                     </div>
                     ))
